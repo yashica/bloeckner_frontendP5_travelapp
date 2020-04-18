@@ -81,25 +81,25 @@ document.getElementById("generate").addEventListener("click", async () => {
     });
 
   //create a data object containing current date, feeling and temperature
-  /* let dataObject = {
+  let dataObject = {
     date: newDate,
     feel: feeling,
     temp: weatherData.main ? weatherData.main.temp : "?",
-  }; */
+  };
 
-  let dataObject = {
+  /*   let dataObject = {
     today: newDate,
     feeling: feeling,
     temperature: weatherData.main ? weatherData.main.temp : "?",
-  };
+  }; */
 
   //server calls
-  /*   let msgFromServer = await postData("/postData", dataObject);
+  let msgFromServer = await postData("/postData", dataObject);
   console.log(`Message from server: ${msgFromServer}`);
   let dataFromServer = await getData("/getData");
-  console.log(`dataFromServer: ${dataFromServer}`); */
+  console.log(`dataFromServer: ${dataFromServer}`);
 
   //update UI with data from server
-  updateUI(dataObject);
-  /* updateUI(dataFromServer); */
+  //updateUI(dataObject);
+  updateUI(dataFromServer);
 });
