@@ -1,12 +1,12 @@
 /* Global Variables */
 //const myCityID = 2884878;
-const myZIP = 10001; //somewhwere in New York
+/* const myZIP = 10001; //somewhwere in New York
 const myApiKey = "e3fc7bbc056d167d99d73a964e1efc27";
 let cityZipCode = myZIP;
-let urlOpenWeatherMap = `http://api.openweathermap.org/data/2.5/weather?zip=${myZIP}&appid=${myApiKey}&units=metric`;
+let urlOpenWeatherMap = `http://api.openweathermap.org/data/2.5/weather?zip=${myZIP}&appid=${myApiKey}&units=metric`; */
 
 //async GET request
-const getData = async (url) => {
+export const getData = async (url) => {
   const request = await fetch(url);
   try {
     //transform into JSON
@@ -18,7 +18,7 @@ const getData = async (url) => {
 };
 
 //async POST request
-const postData = async (url = "", data = {}) => {
+export const postData = async (url = "", data = {}) => {
   const response = await fetch(url, {
     method: "POST",
     credentials: "same-origin",
@@ -36,7 +36,7 @@ const postData = async (url = "", data = {}) => {
   }
 };
 
-const updateUI = (inputData) => {
+export const updateUI = (inputData) => {
   document.getElementById("date").textContent = `date: ${inputData.today}`;
   document.getElementById(
     "temp"
@@ -49,8 +49,17 @@ const updateUI = (inputData) => {
 //Execution:
 //add eventlistener to button generate
 //to execute and process the requests and update the UI on click
-document.getElementById("generate").addEventListener("click", async () => {
+//document.getElementById("generate").addEventListener("click", async () => {
+
+export async function handleClick(event) {
+  event.preventDefault();
+
   console.log("Button clicked!");
+
+  const myZIP = 10001; //somewhwere in New York
+  const myApiKey = "e3fc7bbc056d167d99d73a964e1efc27";
+  //let cityZipCode = myZIP;
+  let urlOpenWeatherMap = `http://api.openweathermap.org/data/2.5/weather?zip=${myZIP}&appid=${myApiKey}&units=metric`;
 
   // Create a new date instance dynamically with JS
   let d = new Date();
@@ -102,4 +111,4 @@ document.getElementById("generate").addEventListener("click", async () => {
   //update UI with data from server
   //updateUI(dataObject);
   updateUI(dataFromServer);
-});
+}
