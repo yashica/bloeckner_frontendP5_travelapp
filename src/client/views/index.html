@@ -10,84 +10,33 @@
   </head>
   <body>
     <header>
-      <div class="holder headline">
+      <div class="headline">
         Your Travel Planner
       </div>
     </header>
 
     <main>
-      <div class="inform">
+      <div class="inputform">
         <div class="city">
           <p>Going to</p>
-          <input type="text" id="myCity" value="" placeholder="Munich" />
+          <input type="text" id="cityInput" value="" placeholder="Munich" />
         </div>
-        <div class="date">
+        <div class="date_start">
           <p>Departing</p>
-          <input type="date" id="myDate" value="2020-05-01" />
+          <input type="date" id="dateInput_start" value="2020-05-01" />
         </div>
-        <div class="back">
+        <div class="date_back">
           <p>Returning</p>
-          <input type="date" id="backDate" value="2020-05-01" />
+          <input type="date" id="dateInput_back" value="2020-05-01" />
         </div>
 
-        <div class="isbutton"><input type="submit" id="submit" /></div>
+        <div class="buttons"><input type="submit" id="submit" /></div>
       </div>
 
-      <section id="resultssection">
-        <div id="insertimage">Plan your trip now!</div>
-        <div id="insertword"></div>
+      <section id="resultsection">
+        <div id="result_image">Plan your trip now!</div>
+        <div id="result_text"></div>
       </section>
     </main>
-
-    <!-- <script src="/js/app.js" type="text/javascript"></script> -->
   </body>
 </html>
-
-<!-- <!DOCTYPE html>
-<html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Test</title>
-        <script type="text/javascript" src="/js/nameChecker.js"></script>
-        <script type="text/javascript" src="/js/formHandler.js"></script>
-        <script type="text/javascript" src="/js/app.js"></script>
-        <link rel="stylesheet" href="/styles/style.css">
-        <link rel="stylesheet" href="/styles/resets.css">
-        <link rel="stylesheet" href="/styles/base.css">
-        <link rel="stylesheet" href="/styles/header.css">
-        <link rel="stylesheet" href="/styles/form.css">
-        <link rel="stylesheet" href="/styles/footer.css">
-    </head>
-
-    <body>
-
-        <header>
-            <div class="">
-                Logo
-            </div>
-            <div class="">
-                navigation
-            </div>
-        </header>
-
-        <main>
-            <section>
-                <form class="" onsubmit="return handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
-                    <input type="submit" name="" value="submit" onclick="return handleSubmit(event)" onsubmit="return handleSubmit(event)">
-                </form>
-            <section>
-
-            <section>
-                <strong>Form Results:</strong>
-                <div id="results"></div>
-            </section>
-        </main>
-
-        <footer>
-            <p>This is a footer</p>
-        </footer>
-
-    </body>
-</html>
- -->

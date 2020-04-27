@@ -1,107 +1,100 @@
-
 input:hover {
-    background-color: yellow;
+  background-color: yellow;
 }
-.inform{
+.inputform {
+  display: grid;
+
+  grid-template-rows: 60px 40px;
+  grid-template-columns: 210px 210px 210px;
+  /*grid-template-areas:"city date " "button button" ;*/
+  /*border: 2px solid red;*/
+
+  width: 630px;
+
+  /*margin-top: 100px;*/
+  /*margin-left: 100px;*/
+  margin: auto auto 0 auto;
+  margin-top: 150px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+#cityInput {
+  border: 2px solid grey;
+  border-radius: 4px;
+}
+#dateInput_start {
+  border: 2px solid grey;
+  border-radius: 4px;
+}
+#dateInput_back {
+  border: 2px solid grey;
+  border-radius: 4px;
+}
+#submit {
+  border: 2px solid grey;
+  border-radius: 4px;
+  width: 630px;
+}
+.city {
+  grid-area: "city";
+  padding-right: 5px;
+}
+
+.date {
+  grid-area: "date";
+  padding-right: 5px;
+}
+
+.buttons {
+  grid-area: "button";
+}
+
+@media (max-width: 785px) {
+  .inputform {
     display: grid;
-    
-    grid-template-rows: 60px 40px;
-    grid-template-columns: 210px 210px 210px;
+
+    grid-template-rows: 60px 60px 60px 60px;
+    grid-template-columns: 400px;
     /*grid-template-areas:"city date " "button button" ;*/
     /*border: 2px solid red;*/
-    
-    width: 630px;
-    
+
+    width: 400px;
+
     /*margin-top: 100px;*/
     /*margin-left: 100px;*/
     margin: auto auto 0 auto;
-    margin-top:150px;
-    text-align: center;
-    margin-bottom: 10px;;
+    margin-top: 150px;
+    text-align: l;
+    margin-bottom: 10px;
+  }
+  #cityInput {
+    border: 2px solid grey;
+    border-radius: 4px;
+  }
+  #dateInput_start {
+    border: 2px solid grey;
+    border-radius: 4px;
+  }
+  #dateInput_back {
+    border: 2px solid grey;
+    border-radius: 4px;
+  }
+  #submit {
+    border: 2px solid grey;
+    border-radius: 4px;
+    width: 400px;
+  }
+  .city {
+    grid-area: "city";
+    padding-right: 5px;
+  }
 
-}
-#myCity{
-    border: 2px solid grey;
-    border-radius: 4px;
-    
-
-}
-#myDate{
-    border: 2px solid grey;
-    border-radius: 4px;
-}
-#backDate{
-    border: 2px solid grey;
-    border-radius: 4px;
-}
-#submit{
-    border: 2px solid grey;
-    border-radius: 4px;
-    width:630px;
-}
-.city{
-    grid-area:"city";
-    padding-right:5px;
-}
-
-.date{
+  .date {
     grid-area: "date";
-    padding-right:5px;
-}
+    padding-right: 5px;
+  }
 
-.isbutton{
+  .buttons {
     grid-area: "button";
-}
-
-@media (max-width:785px) {
-    .inform{
-        display: grid;
-        
-        grid-template-rows: 60px 60px 60px 60px;
-        grid-template-columns: 400px;
-        /*grid-template-areas:"city date " "button button" ;*/
-        /*border: 2px solid red;*/
-        
-        width: 400px;
-        
-        /*margin-top: 100px;*/
-        /*margin-left: 100px;*/
-        margin: auto auto 0 auto;
-        margin-top:150px;
-        text-align: l;
-        margin-bottom: 10px;;
-    
-    }
-    #myCity{
-        border: 2px solid grey;
-        border-radius: 4px;
-        
-    
-    }
-    #myDate{
-        border: 2px solid grey;
-        border-radius: 4px;
-    }
-    #backDate{
-        border: 2px solid grey;
-        border-radius: 4px;
-    }
-    #submit{
-        border: 2px solid grey;
-        border-radius: 4px;
-        width:400px;
-    }
-    .city{
-        grid-area:"city";
-        padding-right:5px;
-    }
-    
-    .date{
-        grid-area: "date";
-        padding-right:5px;
-    }
-    
-    .isbutton{
-        grid-area: "button";
-    }
+  }
 }

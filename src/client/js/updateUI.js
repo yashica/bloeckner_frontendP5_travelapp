@@ -5,9 +5,9 @@ async function updateUI() {
   try {
     const allData = await req.json();
     document.getElementById(
-      "insertimage"
+      "result_image"
     ).innerHTML = `<figure id="imagesize"><img src="${allData.imageurl}" alt="" ><figcaption>${allData.city}</figcaption></figure>`;
-    document.getElementById("insertword").innerHTML = `
+    document.getElementById("result_text").innerHTML = `
         <p>Your trip to ${allData.city} will start in ${allData.timeLeft} days</p>
         <p>Your trip in ${allData.city} are ${allData.duration} days</p>
         <p>The temperature in ${allData.city} will be ${allData.temperature}</p>
