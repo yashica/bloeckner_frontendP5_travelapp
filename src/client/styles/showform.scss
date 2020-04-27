@@ -1,0 +1,88 @@
+section {
+  display: grid;
+  grid-template-columns: 280px 350px;
+  grid-template-areas: "imagepart wordpart";
+  /*border: 2px solid red;*/
+  background-color: grey;
+  width: 630px;
+  height: 300px;
+  margin: auto auto 0 auto;
+  margin-top: 20px;
+}
+#insertimage {
+  grid-area: "imagepart";
+  margin-left: 25px;
+  margin-right: 10px;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  /*border: 2px solid green; */
+}
+#insertword {
+  grid-area: "wordpart";
+  margin-left: 10px;
+  margin-right: 25px;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  /*border: 2px solid green;*/
+}
+figure {
+  display: inline-block;
+}
+img {
+  width: 240px;
+  height: 180px;
+}
+
+figure figcaption {
+  text-align: center;
+}
+figure {
+  display: inline-block;
+}
+
+@media (max-width: 785px) {
+  section {
+    display: grid;
+    grid-template-rows: 280px 350px;
+    /*grid-template-areas:"imagepart" "wordpart" ;*/
+    /*border: 2px solid red;*/
+    background-color: grey;
+    width: 400px;
+    height: 600px;
+    margin: auto auto 0 auto;
+    margin-top: 10px;
+  }
+  #insertimage {
+    grid-area: 1/1/1/1;
+    width: 380px;
+    height: 250px;
+    /*margin: auto auto 0 auto;*/
+    margin-top: 10px;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+    /*border: 2px solid green; */
+  }
+  #insertword {
+    grid-area: 2/1/2/1;
+    margin: auto auto 0 auto;
+    height: 300px;
+    width: 380px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+    /*border: 2px solid green;*/
+  }
+  figure {
+    display: inline-block;
+  }
+  img {
+    width: 360px;
+    height: 240px;
+  }
+
+  figure figcaption {
+    text-align: center;
+  }
+}

@@ -1,6 +1,16 @@
-import { handleSubmit } from "./js/formHandler.js";
-import { handleClick, getData, postData, updateUI } from "./js/app.js";
+/* import { handleSubmit } from "./js/formHandler.js";
+import { handleClick, getData, postData, updateUI } from "./js/app.js"; */
 
-alert("I exist!");
+//alert("I exist!");
+import "./js/app.js";
 
-export { handleClick, getData, postData, updateUI };
+//import styles
+import "./styles/style.scss";
+import "./styles/resets.scss";
+import "./styles/base.scss";
+//import './styles/footer.scss'
+import "./styles/form.scss";
+//import './styles/header.scss'
+import "./styles/showform.scss";
+
+//export { handleClick, getData, postData, updateUI };
