@@ -16,7 +16,7 @@ dateInput_back.value = formattedDate;
 
 //add event listener to submit button
 submitbutton.addEventListener("click", async function () {
-  //date input values and time calculations
+  //get date input values and do time calculations
   const departtime = new Date(dateInput_start.value).getTime() / 1000;
   const returntime = new Date(dateInput_back.value).getTime() / 1000;
   const timeNow = Math.round(new Date().getTime() / 1000);
@@ -24,8 +24,8 @@ submitbutton.addEventListener("click", async function () {
   const duration = parseInt((returntime - departtime) / (3600 * 24));
 
   //city input
-  const cityInput = "Munich"; //initial value
-  const city = cityInput.value || cityInput;
+  const myCity = "Munich"; //initial value
+  const city = cityInput.value || myCity;
 
   // data object to pass client data to server
   const clientDataObject = {
@@ -34,13 +34,6 @@ submitbutton.addEventListener("click", async function () {
     timeLeft: timeLeft,
     duration: duration,
   };
-  /* const clientDataObject = {
-    departtime: departtime,
-    timeNow: timeNow,
-    city: city,
-    timeLeft: timeLeft,
-    duration: duration,
-  }; */
 
   // do post request with client data to server
   // and then update UI with returned values

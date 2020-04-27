@@ -17,9 +17,9 @@ async function updateUI() {
         <p>Your trip to ${result.city} will start in ${result.timeLeft} days.</p>
         <p>You will stay in ${result.city} for ${result.duration} days.</p>
         </br>
-        <h3>Weather forecast for the day of arrival:</h3>
-        <p>${result.summary}</p>
-        <p>The temperature in ${result.city} will be ${result.temperature}°C.</p>
+        <h3>Weather forecast for the day of arrival</h3>
+        <p>Temperature in ${result.city}: ${result.temperature}°C.</p>
+        <p>Weather: ${result.summary}</p>
         `;
   } catch (error) {
     console.log("error", error);
