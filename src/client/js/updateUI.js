@@ -1,18 +1,25 @@
 async function updateUI() {
-  //const fetch = require('node-fetch');
-  //const req = await fetch("http://localhost:5050/all");
+  // fetch data from server
   const req = await fetch("/all");
+
   try {
-    const allData = await req.json();
+    // get result
+    const result = await req.json();
+
+    // Update UI: Set result image
     document.getElementById(
       "result_image"
-    ).innerHTML = `<figure id="imagesize"><img src="${allData.imageurl}" alt="" ><figcaption>${allData.city}</figcaption></figure>`;
+    ).innerHTML = `<figure id="cityimage"><img src="${result.imageurl}" alt="A picture of ${result.city}" ><figcaption>${result.city}</figcaption></figure>`;
+
+    // Update UI: Set result text
     document.getElementById("result_text").innerHTML = `
-        <p>Your trip to ${allData.city} will start in ${allData.timeLeft} days</p>
-        <p>Your trip in ${allData.city} are ${allData.duration} days</p>
-        <p>The temperature in ${allData.city} will be ${allData.temperature}</p>
-        <h4>Weather Summary</h4>
-        <p>${allData.summary}</p>
+        <h3>Your Trip to ${result.city}</h3>
+        <p>Your trip to ${result.city} will start in ${result.timeLeft} days.</p>
+        <p>You will stay in ${result.city} for ${result.duration} days.</p>
+        </br>
+        <h3>Weather forecast for the day of arrival:</h3>
+        <p>${result.summary}</p>
+        <p>The temperature in ${result.city} will be ${result.temperature}°C.</p>
         `;
   } catch (error) {
     console.log("error", error);
