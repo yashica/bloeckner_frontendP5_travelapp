@@ -6,6 +6,7 @@ dotenv.config();
 console.log(`.env Test: KEY_DARK = ${process.env.KEY_DARK}`);
 console.log(`.env Test: KEY_GEO = ${process.env.KEY_GEO}`);
 console.log(`.env Test: KEY_PIXABAY = ${process.env.KEY_PIXABAY}`);
+console.log(`.env Test: KEY_WEATHERBIT = ${process.env.KEY_WEATHERBIT}`);
 console.log(
   `.env Test: KEY_OPENWEATHERMAP = ${process.env.KEY_OPENWEATHERMAP}`
 );
@@ -58,7 +59,7 @@ postDataObject = {};
 app.post("/postData", function (req, res) {
   inputCity = req.body.city;
   getCoordinates(inputCity)
-    .then((data) => getWeather(data[0], data[1]))
+    .then((data) => getWeather(data[0], data[1], req.body.timeLeft))
     .then(function (data) {
       weathersummary = data[0];
       temperature = data[1];
