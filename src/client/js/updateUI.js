@@ -18,7 +18,6 @@ async function updateUI() {
       result.timeLeft < 16
         ? `Weather forecast for the day of arrival`
         : `Current weather in${result.city}`;
-    console.log(weathercaption);
 
     // Update UI: Set result text
     document.getElementById("result_text").innerHTML = `

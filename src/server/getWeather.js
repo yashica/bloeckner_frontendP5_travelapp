@@ -1,4 +1,8 @@
 async function getWeather(lng, lat, timeLeft) {
+  if (timeLeft < 0) {
+    timeLeft = 0;
+  } //avoid wrong index errors
+
   //weatherbit offers us forecast for 16 days
   //if the trip starts in more than 16 day, we use the current weather api
   const baseUrl =
