@@ -1,22 +1,29 @@
-# Webbpack Express Example App
+# About this Project
 
-The goal of this repo is be an example of a basic but functional app built on Express and Webpack.
+This project is submission 5 of the Udacity Frontend Developer Nanodegree course.
 
-If you want to follow along, start from master and look at the numbered branches of this project. Each one is a step along the path to creating a fully functional webpack setup. In each branch, there will be a documentation file that lists out the steps taken in that branch (each step should also match to a git commit if you look at the history) which you can use as a checklist when setting up your own projects.
+The application is a simple trip planner.
+It contains a User Interface where the user can enter a destination city, a start date and a return date.
+After submission, the user gets data about the weather at the given destination. Is the trip is planned to start during the next 16 day, he will get a weather forecast for the day of arrival, otherwise, he gets weather info from the current day at the given destination.
+Additionally, the app displays an image of the given destination.
 
-## Get Up and Running
+This is achieved by first getting the user input (destination city, start date, return date) at the client side, then sending a post request to the local express server, from where various apis are called to gather the needed information:
 
-Fork this repo, then clone your forked repo down to your computer:
+- http://api.geonames.org/
+- https://api.weatherbit.io/
+- https://pixabay.com/api
 
-```
-git clone -- git@github.com:[your-user-name]/webpack-express.git --
-```
+The gathered data is assembled in the server and then processed in the client again to update the UI.
 
-`cd` into your new folder and run:
+Working on this project included:
 
-- `npm install`
-- `npm start` to start the app
-- this app runs on localhost:3000, but you can of course edit that in server.js
+- Setting up Webpack
+- Sass styles
+- Webpack Loaders and Plugins
+- Service workers
+- Using APIs and creating requests to external urls
+- Using environment variables
+- Testing with Jest
 
 ## Environment variables
 
@@ -38,3 +45,7 @@ To get webpack running:
 2. run `npm run build` to get your dist folder created.
 
    Once that is created you can run `npm run dev` and `npm start` simultaneously to have hot loading of your project as well as a working express environment.
+
+## author
+
+Anna Magdalena Blöckner

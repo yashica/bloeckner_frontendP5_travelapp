@@ -2,15 +2,6 @@
 const dotenv = require("dotenv");
 dotenv.config();
 
-// environment variable test
-console.log(`.env Test: KEY_DARK = ${process.env.KEY_DARK}`);
-console.log(`.env Test: KEY_GEO = ${process.env.KEY_GEO}`);
-console.log(`.env Test: KEY_PIXABAY = ${process.env.KEY_PIXABAY}`);
-console.log(`.env Test: KEY_WEATHERBIT = ${process.env.KEY_WEATHERBIT}`);
-console.log(
-  `.env Test: KEY_OPENWEATHERMAP = ${process.env.KEY_OPENWEATHERMAP}`
-);
-
 // Setup empty JS object to act as endpoint for all routes
 projectData = {};
 
