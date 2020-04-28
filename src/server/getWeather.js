@@ -1,46 +1,39 @@
 async function getWeather(lng, lat, timeLeft) {
-  //const baseURLDark = "https://api.darksky.net/forecast/";
-
-  //weatherbit offers us forecast only for 16 days
+  //weatherbit offers us forecast for 16 days
   //if the trip starts in more than 16 day, we use the current weather api
   const baseUrl =
     "https://api.weatherbit.io/v2.0/" +
-    (timeLeft <= 16 ? "forecast/daily" : "current");
+    (timeLeft < 16 ? "forecast/daily" : "current");
 
+  //dotenv to access our key
   const dotenv = require("dotenv");
   dotenv.config();
-  //const Darkapikey = process.env.KEY_DARK;
   const keyWeatherbit = process.env.KEY_WEATHERBIT;
   console.log(`getWeather: keyWeatherbit = ${keyWeatherbit}`);
-  const fetch = require("node-fetch");
-  //"https://api.weatherbit.io/v2.0/forecast/daily?city=Raleigh,NC&key=API_KEY"
-  //lat=38.123&lon=-78.543
+
+  // construct the url to fetch from
   const fetchString = `${baseUrl}?lat=${lat}&lon=${lng}&key=${keyWeatherbit}`;
   console.log(`getWeather: fetchString = ${fetchString}`);
-  const res = await fetch(fetchString);
-  /* const res = await fetch(
-    `${baseUrl}?lat=${lat},&lon=${lng},&key=${Darkapikey}`
-  ); */
-  //const res = await fetch(`${baseURLDark}${Darkapikey}/${lat},${lng}`);
-  try {
-    const data = await res.json();
-    console.log("getWeather: result data = ");
-    console.log(data);
-    const testday = data.data[0];
-    console.log("testday" + testday);
-    const testTemp = data.data[0].temp;
-    console.log("testTemp" + testTemp);
-    const testDescr = data.data[0].weather.description;
-    console.log("testDescr" + testDescr);
 
-    const weathersummary = testDescr;
-    const temperature = testTemp;
-    //const weathersummary = data.currently.summary;
-    //const temperature = data.currently.temperature;
-    return [weathersummary, temperature];
+  // fetch the data
+  const fetch = require("node-fetch");
+  const res = await fetch(fetchString);
+
+  try {
+    const resultObject = await res.json();
+    console.log("getWeather: resultObject data = ");
+    console.log(resultObject);
+
+    // retrieve the weather data of one day
+    const dataIndex = timeLeft < 16 ? timeLeft : 0;
+    const dataOfOneDay = resultObject.data[dataIndex];
+
+    // retrieve and return temperature and weather description of this day
+    const description = dataOfOneDay.weather.description;
+    const temperature = dataOfOneDay.temp;
+    return [description, temperature];
   } catch (error) {
-    console.log("error", error);
+    console.log("Error in getWeather ", error);
   }
-  //return ["WEATHER ERROR", 66];
 }
 module.exports = getWeather;

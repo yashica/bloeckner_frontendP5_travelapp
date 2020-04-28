@@ -7,5 +7,8 @@ test("getWeather is a function", async () => {
   expect(typeof getWeather).toBe("function");
 });
 test("getWeather should return an object", async () => {
-  expect(typeof getWeather(100, 100)).toBe("object");
+  expect(typeof getWeather(100, 100, 1)).toBe("object");
+});
+test("getWeather should return an object", async () => {
+  expect(typeof getWeather(100, 100, 22)).toBe("object");
 });
