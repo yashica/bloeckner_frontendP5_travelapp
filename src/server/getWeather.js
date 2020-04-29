@@ -13,7 +13,6 @@ async function getWeather(lng, lat, timeLeft) {
   const dotenv = require("dotenv");
   dotenv.config();
   const keyWeatherbit = process.env.KEY_WEATHERBIT;
-  console.log(`getWeather: keyWeatherbit = ${keyWeatherbit}`);
 
   // construct the url to fetch from
   const fetchString = `${baseUrl}?lat=${lat}&lon=${lng}&key=${keyWeatherbit}`;
@@ -25,8 +24,6 @@ async function getWeather(lng, lat, timeLeft) {
 
   try {
     const resultObject = await res.json();
-    console.log("getWeather: resultObject data = ");
-    console.log(resultObject);
 
     // retrieve the weather data of one day
     const dataIndex = timeLeft < 16 ? timeLeft : 0;
