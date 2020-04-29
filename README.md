@@ -15,22 +15,36 @@ This is achieved by first getting the user input (destination city, start date, 
 
 The gathered data is assembled in the server and then processed in the client again to update the UI.
 
-Working on this project included:
-
-- Setting up Webpack
-- Sass styles
-- Webpack Loaders and Plugins
-- Service workers
-- Using APIs and creating requests to external urls
-- Using environment variables
-- Testing with Jest
-
 ## Environment variables
 
-In order to avoid than personal API keys are available publicly when the project is pushed to Github, the access keys are stored as environment variables inside the file .env.
+In order to avoid that personal API keys are available publicly when the project is pushed to Github, the access keys are stored as environment variables inside the file .env.
 The .env file is prevented from beeing uploaded to github by adding '.env' to the .gitignore file.
 
-## Get the project running
+## Get the project ready
+
+In order to run the application, you have to sign up yourself to the required APIs to get the necessary credentials.
+
+1. Go to the following addresses and sign up:
+
+- https://pixabay.com/de/accounts/register/
+- https://www.weatherbit.io/account/create
+- https://www.geonames.org/login
+
+2. Add a file named .env to the project folder with the following content:
+
+KEY_GEO = geonamesUsername
+KEY_PIXABAY = pixabayKey
+KEY_WEATHERBIT = weatherbitKey
+
+Replace geonamesUsername with the user name of your geonames account.
+Replace pixabayKey with your access key you get from pixabay.
+Replace weatherbitKey with your access key you get from weatherbit.
+
+3. Open the project in your IDE and run npm install from the terminal to setup the project with npm.
+
+Now you are ready to use the project.
+
+## Get the project running: contained scripts
 
 package.json contains four scripts: test, dev, start, and build.
 
