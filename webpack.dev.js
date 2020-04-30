@@ -4,7 +4,6 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
   .BundleAnalyzerPlugin;
-const regeneratorRuntime = require("regenerator-runtime");
 require("babel-polyfill");
 
 module.exports = {

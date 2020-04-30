@@ -34,4 +34,6 @@ async function updateUI() {
     console.log("error", error);
   }
 }
-module.exports = updateUI;
+
+export { updateUI };
+//module.exports = updateUI;

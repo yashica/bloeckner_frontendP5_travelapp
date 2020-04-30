@@ -1,4 +1,4 @@
-const updateUI = require("./updateUI");
+import { updateUI } from "./updateUI";
 
 test("updateUI is defined", async () => {
   expect(updateUI).toBeDefined();

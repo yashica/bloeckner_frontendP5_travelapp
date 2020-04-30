@@ -16,7 +16,6 @@ async function getWeather(lng, lat, timeLeft) {
 
   // construct the url to fetch from
   const fetchString = `${baseUrl}?lat=${lat}&lon=${lng}&key=${keyWeatherbit}`;
-  console.log(`getWeather: fetchString = ${fetchString}`);
 
   // fetch the data
   const fetch = require("node-fetch");
